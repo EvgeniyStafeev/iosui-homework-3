@@ -45,7 +45,7 @@ class ProfileHeaderView: UIView {
              profileStatusTextField.text = "Waiting for something..."
              profileStatusTextField.textColor = .gray
              profileStatusTextField.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-             profileStatusTextField.isUserInteractionEnabled = false
+             profileStatusTextField.isUserInteractionEnabled = true
              return profileStatusTextField
          }()
 
@@ -62,11 +62,31 @@ class ProfileHeaderView: UIView {
              showStatusButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
              return showStatusButton
          }()
-
-         @objc private func buttonPressed() {
-             profileStatusTextField.text = statusText
-             print(statusText)
-         }
+    
+    @objc private func buttonPressed() {
+                 profileStatusTextField.text = statusText
+                 self.endEditing(true)
+                 print(statusText)
+             }
+        
+        lazy var newStatus: UITextField = {
+                 let newStatus = UITextField(frame: CGRect(x: 142, y: 100, width: UIScreen.main.bounds.width - 158, height: 40))
+                 //newStatusTextField.translatesAutoresizingMaskIntoConstraints = false
+                 newStatus.text = "Enter text here ..."
+                 newStatus.textColor = .black
+                 newStatus.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+                 newStatus.backgroundColor = .white
+                 newStatus.layer.borderWidth = 1.0
+                 newStatus.layer.borderColor = UIColor.black.cgColor
+                 newStatus.layer.cornerRadius = 12.0
+                 newStatus.addTarget(self, action: #selector(statusTextChanges), for: .editingChanged)
+                 return newStatus
+             }()
+        
+        @objc private func statusTextChanges() {
+                statusText = newStatus.text!
+                print(newStatus)
+            }
 
          private func setupView(){
              addSubview(profileAvatarImage)
