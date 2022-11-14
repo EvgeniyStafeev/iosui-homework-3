@@ -43,7 +43,7 @@ class ProfileHeaderView: UIView {
          lazy var profileStatusTextField: UITextField = {
              let profileStatusTextField = UITextField(frame: CGRect(x: 142, y: 78, width: 200, height: 16))
              profileStatusTextField.text = "Waiting for something..."
-             profileStatusTextField.textColor = .white
+             profileStatusTextField.textColor = .gray
              profileStatusTextField.font = UIFont.systemFont(ofSize: 14, weight: .regular)
              profileStatusTextField.isUserInteractionEnabled = true
              return profileStatusTextField
@@ -71,7 +71,6 @@ class ProfileHeaderView: UIView {
         
         lazy var newStatus: UITextField = {
                  let newStatus = UITextField(frame: CGRect(x: 142, y: 100, width: UIScreen.main.bounds.width - 158, height: 40))
-                 //newStatusTextField.translatesAutoresizingMaskIntoConstraints = false
                  newStatus.text = "Enter text here ..."
                  newStatus.textColor = .black
                  newStatus.font = UIFont.systemFont(ofSize: 15, weight: .regular)
