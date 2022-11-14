@@ -12,7 +12,8 @@ class ProfileViewController: UIViewController {
     var profileHeaderView = ProfileHeaderView()
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemGray6
+        view.backgroundColor = .white
+        profileHeaderView.backgroundColor = .lightGray
         viewWillLayoutSubviews()
     }
 

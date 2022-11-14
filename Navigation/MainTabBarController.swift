@@ -35,8 +35,8 @@ class MainTabBarController: UITabBarController {
         
         viewControllers = [feedNavController, profileNavController]
         
-        UITabBar.appearance().barTintColor = UIColor.white
-        UITabBar.appearance().backgroundColor = .black
+        UITabBar.appearance().barTintColor = UIColor.black
+        UITabBar.appearance().backgroundColor = .white
        
     }
     

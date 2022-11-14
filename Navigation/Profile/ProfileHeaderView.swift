@@ -71,7 +71,6 @@ class ProfileHeaderView: UIView {
         
         lazy var newStatus: UITextField = {
                  let newStatus = UITextField(frame: CGRect(x: 142, y: 100, width: UIScreen.main.bounds.width - 158, height: 40))
-                 //newStatusTextField.translatesAutoresizingMaskIntoConstraints = false
                  newStatus.text = "Enter text here ..."
                  newStatus.textColor = .black
                  newStatus.font = UIFont.systemFont(ofSize: 15, weight: .regular)
